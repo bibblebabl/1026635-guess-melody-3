@@ -3,7 +3,7 @@ import WelcomeScreen from './WelcomeScreen';
 
 const App = () => {
   return (
-    <WelcomeScreen />
+    <WelcomeScreen errors="Какая-та ошибка" />
   );
 };
 

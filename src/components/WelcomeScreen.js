@@ -1,7 +1,7 @@
 import React from 'react';
 
 // eslint-disable-next-line react/prop-types
-const WelcomeScreen = ({errors = `no errors`}) => {
+const WelcomeScreen = ({errors}) => {
   return (
     <div>{errors}</div>
   );
