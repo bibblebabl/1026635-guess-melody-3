@@ -2,8 +2,10 @@ import React from 'react';
 import WelcomeScreen from '../welcome-screen/welcome-screen';
 
 const App = () => {
+  const handleWelcomeButtonClick = () => {};
+
   return (
-    <WelcomeScreen errors="Какая-та ошибка" />
+    <WelcomeScreen onWelcomeButtonClick={handleWelcomeButtonClick} errors="Какая-та ошибка" />
   );
 };
 
