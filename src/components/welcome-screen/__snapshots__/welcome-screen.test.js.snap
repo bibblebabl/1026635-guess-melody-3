@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WelcomeScreen /> renders correctly 1`] = `
+<div
+  className="welcome"
+>
+  some error
+  <button
+    className="button welcome__button"
+  >
+    Start Game
+  </button>
+</div>
+`;
