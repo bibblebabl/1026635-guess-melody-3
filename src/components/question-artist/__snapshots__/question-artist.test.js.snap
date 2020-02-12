@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<QuestionArtist /> renders correctly 1`] = `
+<section
+  className="game game--artist"
+>
+  <header
+    className="game__header"
+  >
+    <a
+      className="game__back"
+      href="#"
+    >
+      <span
+        className="visually-hidden"
+      >
+        Сыграть ещё раз
+      </span>
+      <img
+        alt="Угадай мелодию"
+        className="game__logo"
+        src="img/melody-logo-ginger.png"
+      />
+    </a>
+    <svg
+      className="timer"
+      viewBox="0 0 780 780"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        className="timer__line"
+        cx={390}
+        cy={390}
+        r={370}
+        style={
+          Object {
+            "filter": "url(#blur)",
+            "transform": "rotate(-90deg) scaleY(-1)",
+            "transformOrigin": "center",
+          }
+        }
+      />
+    </svg>
+    <div
+      className="game__mistakes"
+    >
+      <div
+        className="wrong"
+      />
+      <div
+        className="wrong"
+      />
+      <div
+        className="wrong"
+      />
+    </div>
+  </header>
+  <section
+    className="game__screen"
+  >
+    <h2
+      className="game__title"
+    >
+      Кто исполняет эту песню?
+    </h2>
+    <div
+      className="game__track"
+    >
+      <div
+        className="track"
+      >
+        <button
+          className="track__button track__button--play"
+          type="button"
+        />
+        <div
+          className="track__status"
+        >
+          <audio />
+        </div>
+      </div>
+    </div>
+    <form
+      className="game__artist"
+    >
+      <div
+        className="artist"
+      >
+        <input
+          className="artist__input visually-hidden"
+          defaultValue="artist-1"
+          id="answer-1"
+          name="answer"
+          type="radio"
+        />
+        <label
+          className="artist__name"
+          htmlFor="answer-1"
+        >
+          <img
+            alt="Пелагея"
+            className="artist__picture"
+            src="http://placehold.it/134x134"
+          />
+          Пелагея
+        </label>
+      </div>
+      <div
+        className="artist"
+      >
+        <input
+          className="artist__input visually-hidden"
+          defaultValue="artist-2"
+          id="answer-2"
+          name="answer"
+          type="radio"
+        />
+        <label
+          className="artist__name"
+          htmlFor="answer-2"
+        >
+          <img
+            alt="Пелагея"
+            className="artist__picture"
+            src="http://placehold.it/134x134"
+          />
+          Краснознаменная дивизия имени моей бабушки
+        </label>
+      </div>
+      <div
+        className="artist"
+      >
+        <input
+          className="artist__input visually-hidden"
+          defaultValue="artist-3"
+          id="answer-3"
+          name="answer"
+          type="radio"
+        />
+        <label
+          className="artist__name"
+          htmlFor="answer-3"
+        >
+          <img
+            alt="Пелагея"
+            className="artist__picture"
+            src="http://placehold.it/134x134"
+          />
+          Lorde
+        </label>
+      </div>
+    </form>
+  </section>
+</section>
+`;

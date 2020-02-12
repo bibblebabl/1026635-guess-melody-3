@@ -7,9 +7,9 @@ const defaultProps = {
 };
 
 it(`<WelcomeScreen /> renders correctly`, () => {
-  const WelcomeScreenComponent = renderer.create(
+  const component = renderer.create(
       <WelcomeScreen {...defaultProps} />
   ).toJSON();
 
-  expect(WelcomeScreenComponent).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });
