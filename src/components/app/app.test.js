@@ -2,8 +2,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import App from './app';
 
-it(`<App /> renders correctly`, () => {
-  const AppComponent = renderer.create(<App />).toJSON();
+import * as questions from './mocks';
 
-  expect(AppComponent).toMatchSnapshot();
+it(`<App /> renders correctly`, () => {
+  const component = renderer.create(<App
+    errors='Some error'
+    questions={questions}
+  />).toJSON();
+
+  expect(component).toMatchSnapshot();
 });

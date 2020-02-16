@@ -24,7 +24,7 @@ exports[`<App /> renders correctly 1`] = `
       Начать игру
     </span>
   </button>
-  Какая-та ошибка
+  Some error
   <h2
     className="welcome__rules-title"
   >

@@ -1,6 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const QuestionArtist = () => {
+const QuestionArtist = ({
+  question,
+  onAnswer
+}) => {
   return (
     <section className="game game--artist">
       <header className="game__header">
@@ -18,7 +22,7 @@ const QuestionArtist = () => {
         </div>
       </header>
       <section className="game__screen">
-        <h2 className="game__title">Кто исполняет эту песню?</h2>
+        <h2 className="game__title">{question.question}</h2>
         <div className="game__track">
           <div className="track">
             <button className="track__button track__button--play" type="button" />
@@ -28,31 +32,42 @@ const QuestionArtist = () => {
           </div>
         </div>
         <form className="game__artist">
-          <div className="artist">
-            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-1" id="answer-1" />
-            <label className="artist__name" htmlFor="answer-1">
-              <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
-                      Пелагея
-            </label>
-          </div>
-          <div className="artist">
-            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-2" id="answer-2" />
-            <label className="artist__name" htmlFor="answer-2">
-              <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
-                      Краснознаменная дивизия имени моей бабушки
-            </label>
-          </div>
-          <div className="artist">
-            <input className="artist__input visually-hidden" type="radio" name="answer" defaultValue="artist-3" id="answer-3" />
-            <label className="artist__name" htmlFor="answer-3">
-              <img className="artist__picture" src="http://placehold.it/134x134" alt="Пелагея" />
-                      Lorde
-            </label>
-          </div>
+          {
+            question.answers.map((answer) => {
+              return (
+                <div key={answer.id} className="artist">
+                  <input className="artist__input visually-hidden" type="radio" name={question.question} defaultValue={answer.value} id={answer.id}
+                    onChange={(event) => {
+                      event.preventDefault();
+                      onAnswer(question, answer);
+                    }}
+                  />
+                  <label className="artist__name" htmlFor={answer.id}>
+                    <img className="artist__picture" src={answer.url} alt={answer.label} />
+                    {answer.label}
+                  </label>
+                </div>
+              );
+            })
+          }
         </form>
       </section>
     </section>
   );
+};
+
+QuestionArtist.propTypes = {
+  onAnswer: PropTypes.func,
+  question: PropTypes.shape({
+    question: PropTypes.string,
+    answers: PropTypes.arrayOf(PropTypes.shape({
+      type: PropTypes.string,
+      id: PropTypes.number,
+      label: PropTypes.string,
+      value: PropTypes.string,
+      url: PropTypes.string,
+    }))
+  }),
 };
 
 export default QuestionArtist;

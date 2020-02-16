@@ -61,7 +61,7 @@ exports[`<QuestionArtist /> renders correctly 1`] = `
     <h2
       className="game__title"
     >
-      Кто исполняет эту песню?
+      Вопрос?
     </h2>
     <div
       className="game__track"
@@ -88,21 +88,22 @@ exports[`<QuestionArtist /> renders correctly 1`] = `
       >
         <input
           className="artist__input visually-hidden"
-          defaultValue="artist-1"
-          id="answer-1"
-          name="answer"
+          defaultValue="Ответ-1"
+          id={1}
+          name="Вопрос?"
+          onChange={[Function]}
           type="radio"
         />
         <label
           className="artist__name"
-          htmlFor="answer-1"
+          htmlFor={1}
         >
           <img
-            alt="Пелагея"
+            alt="Ответ-1"
             className="artist__picture"
             src="http://placehold.it/134x134"
           />
-          Пелагея
+          Ответ-1
         </label>
       </div>
       <div
@@ -110,21 +111,22 @@ exports[`<QuestionArtist /> renders correctly 1`] = `
       >
         <input
           className="artist__input visually-hidden"
-          defaultValue="artist-2"
-          id="answer-2"
-          name="answer"
+          defaultValue="Ответ-2"
+          id={2}
+          name="Вопрос?"
+          onChange={[Function]}
           type="radio"
         />
         <label
           className="artist__name"
-          htmlFor="answer-2"
+          htmlFor={2}
         >
           <img
-            alt="Пелагея"
+            alt="Ответ-2"
             className="artist__picture"
             src="http://placehold.it/134x134"
           />
-          Краснознаменная дивизия имени моей бабушки
+          Ответ-2
         </label>
       </div>
       <div
@@ -132,21 +134,22 @@ exports[`<QuestionArtist /> renders correctly 1`] = `
       >
         <input
           className="artist__input visually-hidden"
-          defaultValue="artist-3"
-          id="answer-3"
-          name="answer"
+          defaultValue="Ответ-3"
+          id={446}
+          name="Вопрос?"
+          onChange={[Function]}
           type="radio"
         />
         <label
           className="artist__name"
-          htmlFor="answer-3"
+          htmlFor={446}
         >
           <img
-            alt="Пелагея"
+            alt="Ответ-3"
             className="artist__picture"
             src="http://placehold.it/134x134"
           />
-          Lorde
+          Ответ-3
         </label>
       </div>
     </form>

@@ -1,6 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const QuestionGenre = () => {
+const QuestionGenre = ({
+  question,
+  onAnswer
+}) => {
   return (
     <section className="game game--genre">
       <header className="game__header">
@@ -18,53 +22,46 @@ const QuestionGenre = () => {
         </div>
       </header>
       <section className="game__screen">
-        <h2 className="game__title">Выберите инди-рок треки</h2>
+        <h2 className="game__title">{question.question}</h2>
         <form className="game__tracks">
-          <div className="track">
-            <button className="track__button track__button--play" type="button" />
-            <div className="track__status">
-              <audio />
-            </div>
-            <div className="game__answer">
-              <input className="game__input visually-hidden" type="checkbox" name="answer" defaultValue="answer-1" id="answer-1" />
-              <label className="game__check" htmlFor="answer-1">Отметить</label>
-            </div>
-          </div>
-          <div className="track">
-            <button className="track__button track__button--play" type="button" />
-            <div className="track__status">
-              <audio />
-            </div>
-            <div className="game__answer">
-              <input className="game__input visually-hidden" type="checkbox" name="answer" defaultValue="answer-1" id="answer-2" />
-              <label className="game__check" htmlFor="answer-2">Отметить</label>
-            </div>
-          </div>
-          <div className="track">
-            <button className="track__button track__button--pause" type="button" />
-            <div className="track__status">
-              <audio />
-            </div>
-            <div className="game__answer">
-              <input className="game__input visually-hidden" type="checkbox" name="answer" defaultValue="answer-1" id="answer-3" />
-              <label className="game__check" htmlFor="answer-3">Отметить</label>
-            </div>
-          </div>
-          <div className="track">
-            <button className="track__button track__button--play" type="button" />
-            <div className="track__status">
-              <audio />
-            </div>
-            <div className="game__answer">
-              <input className="game__input visually-hidden" type="checkbox" name="answer" defaultValue="answer-1" id="answer-4" />
-              <label className="game__check" htmlFor="answer-4">Отметить</label>
-            </div>
-          </div>
-          <button className="game__submit button" type="submit">Ответить</button>
+          {
+            question.answers.map((answer) => {
+              return (
+                <div key={answer.id} className="track">
+                  <button className="track__button track__button--play" type="button" />
+                  <div className="track__status">
+                    <audio />
+                  </div>
+                  <div className="game__answer">
+                    <input className="game__input visually-hidden" type="checkbox" name={question.question} defaultValue={answer.value} id={answer.id} />
+                    <label className="game__check" htmlFor={answer.id}>Отметить</label>
+                  </div>
+                </div>
+              );
+            })
+          }
+          <button className="game__submit button" type="submit" onClick={(event) => {
+            event.preventDefault();
+            onAnswer(null);
+          }}>Ответить</button>
         </form>
       </section>
     </section>
   );
 };
 
+QuestionGenre.propTypes = {
+  onAnswer: PropTypes.func,
+  question: PropTypes.shape({
+    question: PropTypes.string,
+    answers: PropTypes.arrayOf(PropTypes.shape({
+      type: PropTypes.string,
+      id: PropTypes.number,
+      value: PropTypes.string,
+      url: PropTypes.string,
+    }))
+  })
+};
+
 export default QuestionGenre;
+
