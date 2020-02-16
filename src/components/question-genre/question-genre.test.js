@@ -5,6 +5,7 @@ import QuestionGenre from './question-genre';
 
 export const question =
   {
+    type: `genre`,
     question: `Вопрос`,
     answers: [
       {
@@ -32,7 +33,7 @@ export const question =
 
 it(`<QuestionGenre /> renders correctly`, () => {
   const component = renderer.create(
-      <QuestionGenre question={question} />
+      <QuestionGenre onAnswer={() => {}} question={question} />
   ).toJSON();
 
   expect(component).toMatchSnapshot();

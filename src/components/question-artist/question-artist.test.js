@@ -4,6 +4,7 @@ import QuestionArtist from './question-artist';
 
 const question =
   {
+    type: `artist`,
     question: `Вопрос?`,
     answers: [
       {
@@ -30,7 +31,7 @@ const question =
 
 it(`<QuestionArtist /> renders correctly`, () => {
   const component = renderer.create(
-      <QuestionArtist question={question} />
+      <QuestionArtist onAnswer={() => {}} question={question} />
   ).toJSON();
 
   expect(component).toMatchSnapshot();

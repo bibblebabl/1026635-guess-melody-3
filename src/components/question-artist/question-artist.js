@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {GameType} from '../../const';
+
 const QuestionArtist = ({
   question,
   onAnswer
 }) => {
+
   return (
     <section className="game game--artist">
       <header className="game__header">
@@ -59,9 +62,9 @@ const QuestionArtist = ({
 QuestionArtist.propTypes = {
   onAnswer: PropTypes.func,
   question: PropTypes.shape({
+    type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
     question: PropTypes.string,
     answers: PropTypes.arrayOf(PropTypes.shape({
-      type: PropTypes.string,
       id: PropTypes.number,
       label: PropTypes.string,
       value: PropTypes.string,

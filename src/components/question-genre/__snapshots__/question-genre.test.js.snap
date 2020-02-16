@@ -86,7 +86,6 @@ exports[`<QuestionGenre /> renders correctly 1`] = `
             defaultValue="трек-1"
             id={1}
             name="Вопрос"
-            onChange={[Function]}
             type="checkbox"
           />
           <label
@@ -117,7 +116,6 @@ exports[`<QuestionGenre /> renders correctly 1`] = `
             defaultValue="трек-2"
             id={2}
             name="Вопрос"
-            onChange={[Function]}
             type="checkbox"
           />
           <label
@@ -148,7 +146,6 @@ exports[`<QuestionGenre /> renders correctly 1`] = `
             defaultValue="трек-3"
             id={3}
             name="Вопрос"
-            onChange={[Function]}
             type="checkbox"
           />
           <label
@@ -179,7 +176,6 @@ exports[`<QuestionGenre /> renders correctly 1`] = `
             defaultValue="трек-4"
             id={4}
             name="Вопрос"
-            onChange={[Function]}
             type="checkbox"
           />
           <label
@@ -192,6 +188,7 @@ exports[`<QuestionGenre /> renders correctly 1`] = `
       </div>
       <button
         className="game__submit button"
+        onClick={[Function]}
         type="submit"
       >
         Ответить

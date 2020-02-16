@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {GameType} from '../../const';
+
 const QuestionGenre = ({
   question,
   onAnswer
@@ -53,9 +55,9 @@ const QuestionGenre = ({
 QuestionGenre.propTypes = {
   onAnswer: PropTypes.func,
   question: PropTypes.shape({
+    type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
     question: PropTypes.string,
     answers: PropTypes.arrayOf(PropTypes.shape({
-      type: PropTypes.string,
       id: PropTypes.number,
       value: PropTypes.string,
       url: PropTypes.string,
