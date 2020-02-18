@@ -35,17 +35,18 @@ const QuestionGenre = ({
                     <audio />
                   </div>
                   <div className="game__answer">
-                    <input className="game__input visually-hidden" type="checkbox" name={question.question} defaultValue={answer.value} id={answer.id} />
+                    <input className="game__input visually-hidden" type="checkbox" name={question.question} defaultValue={answer.value} id={answer.id}
+                      onChange={() => {
+                        onAnswer(answer);
+                      }}
+                    />
                     <label className="game__check" htmlFor={answer.id}>Отметить</label>
                   </div>
                 </div>
               );
             })
           }
-          <button className="game__submit button" type="submit" onClick={(event) => {
-            event.preventDefault();
-            onAnswer(null);
-          }}>Ответить</button>
+          <button className="game__submit button" type="submit">Ответить</button>
         </form>
       </section>
     </section>
